@@ -11,7 +11,7 @@
 
 import {
     initializeApp
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 import {
     getFirestore,
@@ -21,7 +21,7 @@ import {
     getDocs,
     addDoc,
     serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 
 /* ==================================================
