@@ -4,7 +4,7 @@
 // =====================================================
 
 import { initializeApp } from
-"https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 import {
     getAuth,
@@ -12,7 +12,7 @@ import {
     onAuthStateChanged,
     signOut
 } from
-"https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 import {
     getFirestore,
@@ -27,7 +27,7 @@ import {
     deleteDoc,
     serverTimestamp
 } from
-"https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 
 // =====================================================
