@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mentoria Medicina - Student Attendance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+    <h1>Mentoria Medicina</h1>
+
+    <p class="portal-title">Student Attendance</p>
+
+    <div class="controls">
+
+        <select id="groupSelect">
+            <option value="">Select Group</option>
+        </select>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search student..."
+        >
+
+    </div>
+
+    </header>
+
+    <main class="container">
+
+        <section class="info-box">
+
+            <h2 id="classTitle">
+                Select a group
+            </h2>
+
+            <p>
+                Attendance Status:
+                <strong id="attendanceStatus">
+                    Demo Mode
+                </strong>
+            </p>
+
+            <p>
+                Total Students:
+                <strong id="totalStudents">0</strong>
+            </p>
+
+            <p>
+                Absent:
+                <strong id="absentCount">0</strong>
+            </p>
+
+        </section>
+
+
+        <section id="studentList">
+
+            <!-- Students will appear here -->
+
+        </section>
+
+    </main>
+
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

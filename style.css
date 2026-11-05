@@ -1,0 +1,756 @@
+/* =========================================================
+   MENTORIA MEDICINA - ATTENDANCE SYSTEM
+   style.css
+========================================================= */
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f5f7;
+    color: #17202a;
+}
+
+
+/* =========================================================
+   STUDENT PAGE
+========================================================= */
+
+/* ---------- HEADER ---------- */
+
+header {
+    background: #173f5f;
+    color: white;
+    padding: 18px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.portal-title {
+    margin: 4px 0 15px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+/* ---------- CONTROLS ---------- */
+
+.controls {
+    display: flex;
+    gap: 8px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.controls select,
+.controls input {
+    flex: 1;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    font-family: inherit;
+}
+
+.controls select:focus,
+.controls input:focus {
+    box-shadow: 0 0 0 2px #5dade2;
+}
+
+
+/* ---------- MAIN CONTAINER ---------- */
+
+.container {
+    width: 100%;
+    max-width: 720px;
+    margin: auto;
+    padding: 15px;
+}
+
+
+/* ---------- INFORMATION BOX ---------- */
+
+.info-box {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.info-box h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.info-box p {
+    margin: 8px 0;
+}
+
+
+/* ---------- STUDENT CARD ---------- */
+
+.student-card {
+    background: white;
+
+    padding: 13px;
+
+    margin-bottom: 9px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+.student-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ---------- STUDENT INFORMATION ---------- */
+
+.student-info {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+.student-number {
+    color: #777;
+
+    font-size: 14px;
+
+    min-width: 25px;
+}
+
+.student-name {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+/* ---------- ABSENT BUTTON ---------- */
+
+.absent-button {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 11px 14px;
+
+    min-width: 105px;
+
+    background: #d9534f;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.absent-button:hover {
+    opacity: 0.9;
+}
+
+.absent-button:active {
+    transform: scale(0.95);
+}
+
+.absent-button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.8;
+}
+
+
+/* ---------- SUBMITTED BUTTON ---------- */
+
+.absent-button.submitted {
+    background: #2e8b57;
+
+    color: white;
+
+    cursor: not-allowed;
+}
+
+
+/* ---------- CLOSED BUTTON ---------- */
+
+.absent-button:disabled:not(.submitted) {
+    background: #777;
+}
+
+
+/* ---------- EMPTY MESSAGE ---------- */
+
+.empty-message {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #777;
+
+    background: white;
+
+    border-radius: 12px;
+}
+
+
+/* ---------- STATUS ---------- */
+
+#attendanceStatus {
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ADMIN LOGIN
+========================================================= */
+
+.login-box {
+    max-width: 400px;
+
+    margin: 70px auto;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.login-box h2 {
+    text-align: center;
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    text-align: center;
+
+    color: #777;
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+}
+
+.login-box input {
+    width: 100%;
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    background: white;
+}
+
+.login-box input:focus {
+    border-color: #5dade2;
+
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+
+    background: #173f5f;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+}
+
+.login-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+#loginMessage {
+    text-align: center;
+
+    color: #d9534f;
+
+    font-weight: bold;
+
+    min-height: 20px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD
+========================================================= */
+
+.admin-container {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 15px;
+}
+
+.admin-header {
+    background: #173f5f;
+
+    color: white;
+
+    padding: 18px 15px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.admin-header h1 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 23px;
+}
+
+.admin-subtitle {
+    text-align: center;
+
+    margin: 6px 0 0;
+
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+
+/* ---------- ADMIN USER ---------- */
+
+.admin-user {
+    background: white;
+
+    padding: 12px 15px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+}
+
+.admin-user strong {
+    color: #173f5f;
+}
+
+
+/* ---------- LOGOUT ---------- */
+
+.logout-btn {
+    float: right;
+
+    background: #d9534f;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 8px 14px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   ADMIN CARDS
+========================================================= */
+
+.admin-card {
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.admin-card h2 {
+    margin-top: 0;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   ADMIN FILTERS
+========================================================= */
+
+.admin-filters {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+.admin-filters label {
+    font-weight: bold;
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 14px;
+}
+
+.admin-filters select,
+.admin-filters input {
+    width: 100%;
+
+    border: 1px solid #ddd;
+
+    background: white;
+}
+
+
+/* =========================================================
+   SESSION CONTROLS
+========================================================= */
+
+.session-controls {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.session-controls label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+}
+
+.session-controls input,
+.session-controls select {
+    width: 100%;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    padding: 11px;
+
+    background: white;
+}
+
+
+/* ---------- SESSION STATUS ---------- */
+
+.session-status {
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    margin: 10px 0;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.session-active {
+    background: #d1e7dd;
+
+    color: #0f5132;
+}
+
+.session-closed {
+    background: #f8d7da;
+
+    color: #842029;
+}
+
+.session-status.warning {
+    background: #fff3cd;
+
+    color: #856404;
+}
+
+.session-status.error {
+    background: #f8d7da;
+
+    color: #842029;
+}
+
+
+/* ---------- SESSION BUTTONS ---------- */
+
+.open-session-btn {
+    width: 100%;
+
+    background: #2e8b57;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.open-session-btn:hover {
+    background: #267349;
+}
+
+.close-session-btn {
+    width: 100%;
+
+    background: #d9534f;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.close-session-btn:hover {
+    background: #b52b27;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.view-btn {
+    width: 100%;
+
+    background: #173f5f;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.stat {
+    background: #f7f9fa;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    border: 1px solid #eee;
+}
+
+.stat-number {
+    display: block;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 13px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   ADMIN ABSENT LIST
+========================================================= */
+
+.absent-list {
+    margin-top: 10px;
+}
+
+.absent-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px 5px;
+
+    border-bottom: 1px solid #eee;
+
+    gap: 10px;
+}
+
+.absent-item:last-child {
+    border-bottom: none;
+}
+
+.absent-student-name {
+    font-weight: 600;
+}
+
+.absent-student-group {
+    font-size: 12px;
+
+    color: #777;
+
+    margin-top: 3px;
+}
+
+.time {
+    color: #777;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.status-absent {
+    display: inline-block;
+
+    background: #f8d7da;
+
+    color: #842029;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+   

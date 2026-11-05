@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mentoria Medicina - Admin Panel</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            color: #222;
+        }
+
+        /* ================================
+           LOGIN
+        ================================= */
+
+        #loginSection {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .login-card h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #1565c0;
+        }
+
+        .login-card h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #555;
+            font-size: 20px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .login-card input:focus {
+            outline: none;
+            border-color: #1565c0;
+        }
+
+        #loginBtn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #1565c0;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #loginBtn:hover {
+            background: #0d47a1;
+        }
+
+        #loginBtn:disabled {
+            background: #999;
+            cursor: not-allowed;
+        }
+
+        #loginMessage {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           ADMIN DASHBOARD
+        ================================= */
+
+        #adminDashboard {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .top-bar {
+            background: #1565c0;
+            color: white;
+            padding: 18px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .admin-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        #adminEmail {
+            font-size: 14px;
+        }
+
+        #logoutBtn {
+            border: none;
+            background: white;
+            color: #1565c0;
+            padding: 8px 14px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #logoutBtn:hover {
+            background: #e3f2fd;
+        }
+
+
+        /* ================================
+           MAIN CONTAINER
+        ================================= */
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+
+        /* ================================
+           ADMIN CARD
+        ================================= */
+
+        .admin-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .admin-card h2 {
+            margin-top: 0;
+            color: #1565c0;
+        }
+
+
+        /* ================================
+           SESSION CONTROL
+        ================================= */
+
+        .session-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: end;
+        }
+
+        .session-controls label {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-weight: bold;
+            min-width: 150px;
+        }
+
+        .session-controls select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        .open-session-btn,
+        .close-session-btn {
+            padding: 11px 18px;
+            border: none;
+            border-radius: 7px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .open-session-btn {
+            background: #2e7d32;
+        }
+
+        .open-session-btn:hover {
+            background: #1b5e20;
+        }
+
+        .close-session-btn {
+            background: #c62828;
+        }
+
+        .close-session-btn:hover {
+            background: #8e0000;
+        }
+
+        .session-status {
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 7px;
+            background: #eeeeee;
+        }
+
+        .session-active {
+            background: #e8f5e9;
+            color: #1b5e20;
+            font-weight: bold;
+        }
+
+        .session-closed {
+            background: #eeeeee;
+            color: #555;
+        }
+
+        .session-status.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .session-status.error {
+            background: #ffebee;
+            color: #b71c1c;
+        }
+
+
+        /* ================================
+           FILTERS
+        ================================= */
+
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: end;
+        }
+
+        .filter-box {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .filter-box label {
+            font-weight: bold;
+        }
+
+        .filter-box select,
+        .filter-box input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+
+        /* ================================
+           STATISTICS
+        ================================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-card h3 {
+            margin: 0 0 10px;
+            color: #555;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1565c0;
+        }
+
+
+        /* ================================
+           ABSENT LIST
+        ================================= */
+
+        #absentList {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .attendance-item {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .attendance-item:last-child {
+            border-bottom: none;
+        }
+
+
+        /* ================================
+           PDF DOWNLOAD BUTTON
+        ================================= */
+
+        #downloadAbsentPdf {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 13px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #1565c0;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #downloadAbsentPdf:hover {
+            background: #0d47a1;
+        }
+
+        #downloadAbsentPdf:active {
+            transform: scale(0.98);
+        }
+
+        #downloadAbsentPdf:disabled {
+            background: #999;
+            cursor: not-allowed;
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            .top-bar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .admin-info {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .dashboard-container {
+                padding: 12px;
+            }
+
+            .session-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .session-controls label {
+                width: 100%;
+            }
+
+            .open-session-btn,
+            .close-session-btn {
+                width: 100%;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         LOGIN SECTION
+    ================================================== -->
+
+    <section id="loginSection">
+
+        <div class="login-card">
+
+            <h1>Mentoria Medicina</h1>
+
+            <h2>Admin Login</h2>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Admin Email"
+                autocomplete="email"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                autocomplete="current-password"
+            >
+
+            <button id="loginBtn">
+                Login
+            </button>
+
+            <div id="loginMessage"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ADMIN DASHBOARD
+    ================================================== -->
+
+    <section id="adminDashboard">
+
+
+        <!-- TOP BAR -->
+
+        <div class="top-bar">
+
+            <h1>
+                Mentoria Medicina
+            </h1>
+
+            <div class="admin-info">
+
+                <span>
+                    Admin:
+                    <strong id="adminEmail"></strong>
+                </span>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DASHBOARD CONTENT -->
+
+        <div class="dashboard-container">
+
+
+            <!-- FILTER CARD -->
+
+            <div class="admin-card">
+
+                <h2>
+                    Attendance Records
+                </h2>
+
+                <div class="filter-row">
+
+                    <div class="filter-box">
+
+                        <label for="groupFilter">
+                            Group
+                        </label>
+
+                        <select id="groupFilter">
+
+                            <option value="">
+                                All Groups
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-box">
+
+                        <label for="dateFilter">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dateFilter"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Students
+                    </h3>
+
+                    <div
+                        id="totalStudents"
+                        class="stat-number"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Absent
+                    </h3>
+
+                    <div
+                        id="absentCount"
+                        class="stat-number"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ABSENT LIST -->
+
+            <div class="admin-card">
+
+                <h2>
+                    Attendance Details
+                </h2>
+
+                <!-- PDF BUTTON -->
+
+                <button
+                    id="downloadAbsentPdf"
+                    type="button"
+                >
+                    Download Absent PDF
+                </button>
+
+
+                <div id="absentList">
+
+                    <p>
+                        Loading attendance...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PDF LIBRARIES
+    ================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+
+
+    <!-- =================================================
+         ADMIN JAVASCRIPT
+    ================================================== -->
+
+    <script
+        type="module"
+        src="admin.js"
+    ></script>
+
+
+</body>
+
+</html>
