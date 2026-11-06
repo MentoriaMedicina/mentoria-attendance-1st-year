@@ -895,7 +895,7 @@ async function openSession() {
             query(
                 collection(
                     db,
-                    "sessions"
+                    "new_sessions"
                 ),
                 where(
                     "active",
@@ -962,7 +962,7 @@ async function openSession() {
             await addDoc(
                 collection(
                     db,
-                    "sessions"
+                    "new_sessions"
                 ),
                 sessionData
             );
@@ -1054,7 +1054,7 @@ async function checkActiveSession() {
             query(
                 collection(
                     db,
-                    "sessions"
+                    "new_sessions"
                 ),
                 where(
                     "active",
@@ -1103,7 +1103,7 @@ async function checkActiveSession() {
             await updateDoc(
                 doc(
                     db,
-                    "sessions",
+                    "new_sessions",
                     sessionDoc.id
                 ),
                 {
@@ -1198,7 +1198,7 @@ async function closeSession() {
             query(
                 collection(
                     db,
-                    "sessions"
+                    "new_sessions"
                 ),
                 where(
                     "active",
@@ -1222,7 +1222,7 @@ async function closeSession() {
             await updateDoc(
                 doc(
                     db,
-                    "sessions",
+                    "new_sessions",
                     sessionDoc.id
                 ),
                 {
@@ -1360,7 +1360,7 @@ async function loadAttendance() {
             await getDocs(
                 collection(
                     db,
-                    "attendance"
+                    "new_attendance"
                 )
             );
 
@@ -1711,7 +1711,7 @@ async function deleteAttendance(
         await deleteDoc(
             doc(
                 db,
-                "attendance",
+                "new_attendance",
                 id
             )
         );
@@ -1961,7 +1961,7 @@ if (downloadAbsentPdfBtn) {
 
                 const snapshot =
                     await getDocs(
-                        collection(db, "attendance")
+                        collection(db, "new_attendance)
                     );
 
 
