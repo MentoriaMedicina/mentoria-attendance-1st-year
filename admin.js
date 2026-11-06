@@ -110,7 +110,7 @@ const absentCount =
 
 const groups = {
 
-    "Group 7": [
+    "Group 1": [
         "Jayaram",
         "Nikhil",
         "Afsal",
@@ -133,7 +133,7 @@ const groups = {
         "Avanthika"
     ],
   
-    "Group 8": [
+    "Group 2": [
     "PAUL SHINE",
     "DAN B SAM",
     "RAJKRISHNA B",
@@ -154,7 +154,7 @@ const groups = {
     "EVA SAYONA"
 ],
 
-    "Group 9": [
+    "Group 3": [
         "Ajlan Mahmood",
         "Aliya naushad",
         "Almaz russel",
@@ -176,7 +176,7 @@ const groups = {
         "Aishwarya"
     ],
 
-    "Group 10": [
+    "Group 4": [
         "P Meenakshy Nair",
         "Gloria v s",
         "Sandra. S. R",
@@ -199,7 +199,7 @@ const groups = {
         "Jelshian VA"
     ],
 
-    "Group 11": [
+    "Group 5": [
         "Anu suresh Aryananda",
         "Archana shaji Akshaya",
         "Biju Anugraha",
@@ -222,7 +222,7 @@ const groups = {
         "Shaji Jagath"
     ],
 
-    "Group 12": [
+    "Group 6": [
         "Musthaid",
         "anaswara",
         "varsha",
@@ -245,7 +245,7 @@ const groups = {
         "Reby"
     ],
 
-    "Group 13": [
+    "Group 7": [
         "Niranjan",
         "Athul Rajendran",
         "Abhiram Darshan H",
@@ -266,18 +266,9 @@ const groups = {
         "Muhsina",
         "Abhishek",
         "Gulfisha"
-    ],
-
-    "Group 15": [
-        "Joshua jimmy",
-        "Saldan k.s",
-        "Abhinandh L.S",
-        "Jasmine Maria John",
-        "Aisha M Anzari",
-        "Alakanandha",
-        "Snena Angel",
-        "Christy Sara Pinto"
     ]
+
+    
 
 };
 
@@ -610,36 +601,33 @@ function setupGroups() {
             All Groups
         </option>
 
+        <option value="Group 1">
+            Group 1
+        </option>
+        <option value="Group 2">
+            Group 2
+        </option>
+        <option value="Group 3">
+            Group 3
+        </option>
+
+        <option value="Group 4">
+            Group 4
+        </option>
+
+        <option value="Group 5">
+            Group 5
+        </option>
+
+        <option value="Group 6">
+            Group 6
+        </option>
+
         <option value="Group 7">
-            Group 7
-        </option>
-        <option value="Group 8">
-            Group 8
-        </option>
-        <option value="Group 9">
-            Group 9
+            Group 
         </option>
 
-        <option value="Group 10">
-            Group 10
-        </option>
-
-        <option value="Group 11">
-            Group 11
-        </option>
-
-        <option value="Group 12">
-            Group 12
-        </option>
-
-        <option value="Group 13">
-            Group 13
-        </option>
-
-        <option value="Group 15">
-            Group 15
-        </option>
-
+        
     `;
 
 
@@ -713,35 +701,33 @@ function createSessionPanel() {
                         Select Group
                     </option>
 
+                    <option value="Group 1">
+            Group 1
+        </option>
+           <option value="Group 2">
+            Group 2
+        </option>
+                    <option value="Group 3">
+                        Group 3
+                    </option>
+
+                    <option value="Group 4">
+                        Group 4
+                    </option>
+
+                    <option value="Group 5">
+                        Group 5
+                    </option>
+
+                    <option value="Group 6">
+                        Group 6
+                    </option>
+
                     <option value="Group 7">
-            Group 7
-        </option>
-           <option value="Group 8">
-            Group 8
-        </option>
-                    <option value="Group 9">
-                        Group 9
+                        Group 7
                     </option>
 
-                    <option value="Group 10">
-                        Group 10
-                    </option>
-
-                    <option value="Group 11">
-                        Group 11
-                    </option>
-
-                    <option value="Group 12">
-                        Group 12
-                    </option>
-
-                    <option value="Group 13">
-                        Group 13
-                    </option>
-
-                    <option value="Group 15">
-                        Group 15
-                    </option>
+                    
 
                 </select>
 
