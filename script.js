@@ -71,7 +71,7 @@ console.log(
 
 const groups = {
 
-    "Group 7": [
+    "Group 1": [
 
         "Jayaram",
         "Nikhil",
@@ -96,7 +96,7 @@ const groups = {
 
     ],
   
-   "Group 8": [
+   "Group 2": [
     "PAUL SHINE",
     "DAN B SAM",
     "RAJKRISHNA B",
@@ -118,7 +118,7 @@ const groups = {
 ],
 
 
-    "Group 9": [
+    "Group 3": [
 
         "Ajlan Mahmood",
         "Aliya naushad",
@@ -143,7 +143,7 @@ const groups = {
     ],
 
 
-    "Group 10": [
+    "Group 4": [
 
         "P Meenakshy Nair",
         "Gloria v s",
@@ -169,7 +169,7 @@ const groups = {
     ],
 
 
-    "Group 11": [
+    "Group 5": [
 
         "Anu suresh Aryananda",
         "Archana shaji Akshaya",
@@ -195,7 +195,7 @@ const groups = {
     ],
 
 
-    "Group 12": [
+    "Group 6": [
 
         "Musthaid",
         "anaswara",
@@ -221,7 +221,7 @@ const groups = {
     ],
 
 
-    "Group 13": [
+    "Group 7": [
 
         "Niranjan",
         "Athul Rajendran",
@@ -244,21 +244,10 @@ const groups = {
         "Abhishek",
         "Gulfisha"
 
-    ],
-
-
-    "Group 15": [
-
-        "Joshua jimmy",
-        "Saldan k.s",
-        "Abhinandh L.S",
-        "Jasmine Maria John",
-        "Aisha M Anzari",
-        "Alakanandha",
-        "Snena Angel",
-        "Christy Sara Pinto"
-
     ]
+
+
+    
 
 };
 
