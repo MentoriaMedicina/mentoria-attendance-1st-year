@@ -624,7 +624,7 @@ function setupGroups() {
         </option>
 
         <option value="Group 7">
-            Group 
+            Group 7
         </option>
 
         
@@ -1947,7 +1947,7 @@ if (downloadAbsentPdfBtn) {
 
                 const snapshot =
                     await getDocs(
-                        collection(db, "new_attendance)
+                        collection(db, "new_attendance")
                     );
 
 
