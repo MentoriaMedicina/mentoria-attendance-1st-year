@@ -394,7 +394,7 @@ async function findActiveSession() {
         const sessionsRef =
             collection(
                 db,
-                "sessions"
+                "new_sessions"
             );
 
 
@@ -627,7 +627,7 @@ async function loadAttendance() {
         const attendanceRef =
             collection(
                 db,
-                "attendance"
+                "new_attendance"
             );
 
 
@@ -1041,7 +1041,7 @@ async function markAbsent(
 
             collection(
                 db,
-                "attendance"
+                "new_attendance"
             ),
 
             {
